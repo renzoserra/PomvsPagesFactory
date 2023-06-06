@@ -12,19 +12,14 @@ public class LoginStepsSL {
 
     @Given("Un usuario con credenciales validas en el home page de sauce demo")
     public void unUsuarioConCredencialesValidasEnElHomePageDeSauceDemo() {
-
         objHomePageSL.validToSauceDemoHomePage();
     }
     @When("Ingreso usuario y contrasena")
     public void ingresoUsuarioYContrasena() {
-
         objHomePageSL.login("standard_user", "secret_sauce");
     }
     @Then("Visualizo el cambio de pagina al inventario")
     public void visualizoElCambioDePaginaAlInventario() {
 
     }
-
-
-
 }
