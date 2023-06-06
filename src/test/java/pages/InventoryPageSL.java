@@ -1,10 +1,19 @@
 package pages;
 
-public class InventoryPageSL extends BasePage{
-    // Contructor
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-    public InventoryPageSL() {
-        super(driver);
+public class InventoryPageSL{
+
+    WebDriver driver;
+
+
+    // Contructor
+    public InventoryPageSL (WebDriver driver){
+        this.driver = driver;
+        PageFactory.initElements(driver,this);
     }
 
     //URL
@@ -12,11 +21,12 @@ public class InventoryPageSL extends BasePage{
     String url = "https://www.saucedemo.com/inventory.html";
 
     //Web Element
-    String spanProducts = "//span[contains(text(),'Products')]";
+    @FindBy(xpath = "//span[contains(text(),'Products')]")
+    WebElement spanProducts;
 
     //Metodos
     public void validateSpanProducts(){
-    find(spanProducts);
+        spanProducts.getText().contains("Products");
     }
 
 }
