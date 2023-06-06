@@ -11,17 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePageSL {
 
-    WebDriver driver;
-
-
-
-    // Contructor
-    public HomePageSL(WebDriver driver){
-    this.driver = driver;
-    ChromeOptions chromeOptions = new ChromeOptions();
-    driver = new ChromeDriver(chromeOptions);
-    PageFactory.initElements(driver,this);
-    }
 
     //URL
 
@@ -35,10 +24,22 @@ public class HomePageSL {
     @FindBy(xpath = "//input[@id='login-button']")
     WebElement loginButtonSubmit;
 
+
+    WebDriver driver;
+    // Contructor
+    public HomePageSL(WebDriver driver){
+    this.driver = driver;
+    ChromeOptions chromeOptions = new ChromeOptions();
+    driver = new ChromeDriver(chromeOptions);
+    PageFactory.initElements(driver,this);
+    driver.get(url);
+    }
+
+
     //Metodos
 
-    public void navigateToSauceDemoHomePage(){
-        driver.get(url);
+    public void validToSauceDemoHomePage(){
+        Assert.assertTrue(inputUser.isDisplayed());
     }
 
     public void login(String username, String password) {

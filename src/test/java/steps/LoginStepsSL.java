@@ -5,11 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pages.HomePageSL;
-import pages.InventoryPageSL;
-
 public class LoginStepsSL {
-
-
 
     private WebDriver driver;
     HomePageSL objHomePageSL = new HomePageSL(driver);
@@ -17,10 +13,10 @@ public class LoginStepsSL {
     @Given("Un usuario con credenciales validas en el home page de sauce demo")
     public void unUsuarioConCredencialesValidasEnElHomePageDeSauceDemo() {
 
-        objHomePageSL.navigateToSauceDemoHomePage();
+        objHomePageSL.validToSauceDemoHomePage();
     }
-    @When("Ingreso usuario y contresena")
-    public void ingresoUsuarioYContresena() {
+    @When("Ingreso usuario y contrasena")
+    public void ingresoUsuarioYContrasena() {
 
         objHomePageSL.login("standard_user", "secret_sauce");
     }
